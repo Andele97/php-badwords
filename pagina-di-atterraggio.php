@@ -20,7 +20,8 @@ $lastname = $_GET['cognome'];
 </h1>
 
 <h2>
-Benvenuto/a <?php echo ucwords($name . ' ' . $lastname) ?>
+  Benvenuto/a <?php echo ucwords($name)?> <?php echo str_replace($lastname, '***')?> <br>
+  la stringa è lunga <?php echo strlen($name . ' ' . $lastname) ?> caratteri
 </h2>
   
 </body>
