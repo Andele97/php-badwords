@@ -1,7 +1,7 @@
 <?php
-$name = $_GET['nome'];
-$lastname = $_GET['cognome'];
-
+$name = $_POST['nome'];
+$paragraph = $_POST['paragraph'];
+$cens_string = str_replace($name , '***', $paragraph);
 ?>
 
 <!DOCTYPE html>
@@ -11,18 +11,28 @@ $lastname = $_GET['cognome'];
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>pagina di atterraggio</title>
+  <style>
+
+    .container{
+      width: 50%;
+      margin: auto;
+      text-align: center;
+      margin-top: 15%;
+    }
+
+  </style>
 </head>
 <body>
 
-<h1>
-  Benvenuto/a <?php echo ucwords($name . ' ' . $lastname) ?> <br>
-  la stringa è lunga <?php echo strlen($name . ' ' . $lastname) ?> caratteri
-</h1>
+<div class="container">
+<h2>Benvenuto/a <?php echo ucwords($name . ' ' . $lastname) ?> </h2> <br>
+<p><?php echo $paragraph ?></p>
+<p>la stringa è lunga <?php echo strlen($paragraph) ?> caratteri</p>
 
-<h2>
-  Benvenuto/a <?php echo ucwords($name)?> <?php echo str_replace($lastname, '***')?> <br>
-  la stringa è lunga <?php echo strlen($name . ' ' . $lastname) ?> caratteri
-</h2>
+<h2>Benvenuto/a <?php echo ucwords($name)?></h2><br>
+<p>la stringa è lunga <?php echo strlen($cens_string) ?> caratteri:</p>
+<p><?php echo $cens_string ?></p>
+</div>
   
 </body>
 </html>
